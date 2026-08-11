@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="eng">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>GenVer</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    </head>
+
+    <body>
+
+        <!---=========
+           NAV BAR
+          =========-->
+
+        <div class="side-bar">
+            <div class="nav-container">
+                <div class="logo">
+                    <img src="logo/logo.png" alt="GenVer_logo" class="logo-icon">
+                    <img src="logo/name.png" alt="GenVer_name" class="logo-name">
+                
+                </div>
+                    <a href="dashboard.html" data-tooltip="Dashboard"><i class="fa-solid fa-tachograph-digital"></i><span class="nav-label"> Dashboard</span></a>
+                    <a href="projects.html" class="active" data-tooltip="Projects"><i class="fa-solid fa-diagram-project"></i> <span class="nav-label"> Projects</span></a>
+                    <a href="member.html" data-tooltip="Member"><i class="fa-solid fa-people-group"></i> <span class="nav-label"> Member</span></a>
+                    <a href="public.html" data-tooltip="Public View"><i class="fa-solid fa-eye"></i> <span class="nav-label"> Public View</span></a>
+                    <a href="settings.html" data-tooltip="Settings"><i class="fa-solid fa-gear"></i> <span class="nav-label"> Settings</span></a>
+                    
+            </div>
+            <div class="sidebar-bottom-controls">
+                <button id="logout-link"><i class="fa-solid fa-right-from-bracket"></i><span class="nav-label"> Logout</span></button>
+                <button id="sidebar-toggle"><i class="fa-solid fa-bars-staggered"></i></button>
+            </div>
+        </div>
+        <div class="sidebar-backdrop" id="sidebar-backdrop"></div>
+
+        <!---============
+            MAIN CONTENT
+          ===============-->
+            <div class="top-bar">
+                <div class="top-container">
+                    <h3 class="active-nav">Projects</h3>
+
+                    <div class="profile">
+                        <i class="fa-regular fa-bell"></i>
+                        <div class="profile-info">
+                            <img src="profile/pic.png" alt="">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        <div class="main-content">
+            <div class="page-title">All Projects</div>
+            <div class="project-contents">
+                <div class="search">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input type="text" id="search-input" placeholder="Search Project...">
+                </div>
+                <button id="create-project-btn" class="create-btn"><i class="fa-solid fa-plus"></i> Create Project</button>
+                <div class="sort">
+                    <a href="#all" id="all-section">All </a>
+                    <a href="#active" id="active-section">Active</a>
+                    <a href="#completed" id="completed-section">Completed</a>
+                    <a href="#archived" id="archived-section">Archived</a>
+                </div>
+            </div>
+
+
+            <div class="projects-section-project">
+
+        <!---============
+        All Projects
+        ===============-->
+
+            <h3 class="section-title">All Projects</h3>
+            <div id="all" class="project-cards"></div>
+
+        <!---============
+        Active Projects
+        ===============-->
+
+            <div id="active" class="project-cards"></div>
+
+        <!---============
+        Completed Projects
+        ===============-->
+
+            <div id="completed" class="project-cards"></div>
+
+        <!---============
+            Archived Projects
+        ===============-->
+
+            <div id="archived" class="project-cards"></div>
+
+
+
+
+        </div>
+
+        </div>
+
+    <div id="create-project-modal" class="modal-overlay">
+        <div class="modal-box">
+            <h2 class="modal-title">Create Project</h2>
+
+            <form id="create-project-form">
+                <label for="project-name">Project Name</label>
+                <input type="text" id="project-name" required>
+
+                <label for="project-goal">Goal Amount (₱)</label>
+                <input type="number" id="project-goal" min="1" required>
+
+                <label for="project-description">Description</label>
+                <textarea id="project-description" rows="3"></textarea>
+
+                <label for="project-date">Target Date</label>
+                <input type="date" id="project-date">
+
+                <div class="modal-actions">
+                    <button type="button" id="cancel-create-btn" class="btn-secondary">Cancel</button>
+                    <button type="submit" class="btn-primary">Create</button>
+                </div>
+            </form>
+        </div>
+    </div>
+        <div id="confirm-modal" class="modal-overlay">
+            <div class="modal-box confirm-modal-box">
+                <div class="confirm-icon"><i class="fa-solid fa-triangle-exclamation"></i></div>
+                <h2 id="confirm-modal-title" class="modal-title">Are you sure?</h2>
+                <p id="confirm-modal-message" class="confirm-modal-message"></p>
+                <div class="modal-actions">
+                    <button type="button" id="confirm-cancel-btn" class="btn-secondary">Cancel</button>
+                    <button type="button" id="confirm-confirm-btn" class="btn-primary confirm-danger-btn">Confirm</button>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+<script src="auth.js"></script>
+<script>requireLogin();</script>
+<script src="shared.js"></script>
+<script src="dashboard.js"></script>
+<script src="projects.js"></script>
+
+
+    </body>
+</html>

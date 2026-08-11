@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="eng">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>GenVer</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    </head>
+
+    <body>
+
+        <!---=========
+           NAV BAR
+          =========-->
+
+        <div class="side-bar">
+            <div class="nav-container">
+                <div class="logo">
+                    <img src="logo/logo.png" alt="GenVer_logo" class="logo-icon">
+                    <img src="logo/name.png" alt="GenVer_name" class="logo-name">
+                    
+                </div>
+                    <a href="dashboard.html" data-tooltip="Dashboard"><i class="fa-solid fa-tachograph-digital"></i><span class="nav-label"> Dashboard</span></a>
+                    <a href="projects.html" data-tooltip="Projects"><i class="fa-solid fa-diagram-project"></i> <span class="nav-label"> Projects</span></a>
+                    <a href="member.html" class="active" data-tooltip="Member"><i class="fa-solid fa-people-group"></i> <span class="nav-label"> Member</span></a>
+                    <a href="public.html" data-tooltip="Public View"><i class="fa-solid fa-eye"></i> <span class="nav-label"> Public View</span></a>
+                    <a href="settings.html" data-tooltip="Settings"><i class="fa-solid fa-gear"></i> <span class="nav-label"> Settings</span></a>
+    
+            </div>
+            <div class="sidebar-bottom-controls">
+                <button id="logout-link"><i class="fa-solid fa-right-from-bracket"></i><span class="nav-label"> Logout</span></button>
+                <button id="sidebar-toggle"><i class="fa-solid fa-bars-staggered"></i></button>
+            </div>
+        </div>
+        <div class="sidebar-backdrop" id="sidebar-backdrop"></div>
+
+        <!---============
+            MAIN CONTENT
+          ===============-->
+
+        <div class="top-bar">
+            <div class="top-container">
+                <h3 class="active-nav">Members</h3>
+
+                <div class="profile">
+                    <i class="fa-regular fa-bell"></i>
+                    <div class="profile-info">
+                        <img src="profile/pic.png" alt="">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="main-content">
+            <div class="page-title">Members</div>
+            <div class="project-contents">
+                <div class="search">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input type="text" id="member-search-input" placeholder="Search Member...">
+                </div>
+                <button id="add-member-btn" class="create-btn"><i class="fa-solid fa-plus"></i> Add Member</button>
+                <div class="sort">
+                    <a href="#all" id="member-all-status">All Status</a>
+                    <a href="#paid" id="member-paid-status">Paid</a>
+                    <a href="#partial" id="member-partial-status">Partial</a>
+                    <a href="#unpaid" id="member-unpaid-status">Unpaid</a>
+                </div>
+                <select id="member-sort-select" class="member-sort-select">
+                    <option value="name">Name (A-Z)</option>
+                    <option value="newest">Newest → Oldest</option>
+                    <option value="projects">Mostt Projects Joined</option>
+                </select>
+            </div>
+
+            <div id="member-list" class="member-cards"></div>
+        </div>
+
+
+        <div id="add-member-modal" class="modal-overlay">
+            <div class="modal-box modal-box-wide">
+                <h2 class="modal-title">Add Member</h2>
+
+                <form id="add-member-form">
+                    <div class="add-member-layout">
+
+                        <div class="add-member-left">
+                            <label for="member-name">Full Name</label>
+                            <input type="text" id="member-name" required>
+
+                            <label for="member-joined-date">Joined Date</label>
+                            <input type="date" id="member-joined-date" required>
+
+                            <label>Assign to Project(s) — optional</label>
+                            <div id="project-checkbox-grid" class="checkbox-grid"></div>
+                        </div>
+
+                        <div class="add-member-right">
+                            <label>Payment Details</label>
+                            <div id="project-assignment-fields" class="assignment-fields-scroll"></div>
+                        </div>
+
+                    </div>
+
+                    <div class="modal-actions">
+                        <button type="button" id="cancel-member-btn" class="btn-secondary">Cancel</button>
+                        <button type="submit" class="btn-primary">Add Member</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div id="confirm-modal" class="modal-overlay">
+            <div class="modal-box confirm-modal-box">
+                <div class="confirm-icon"><i class="fa-solid fa-triangle-exclamation"></i></div>
+                <h2 id="confirm-modal-title" class="modal-title">Are you sure?</h2>
+                <p id="confirm-modal-message" class="confirm-modal-message"></p>
+                <div class="modal-actions">
+                    <button type="button" id="confirm-cancel-btn" class="btn-secondary">Cancel</button>
+                    <button type="button" id="confirm-confirm-btn" class="btn-primary confirm-danger-btn">Confirm</button>
+                </div>
+            </div>
+        </div>
+
+        <script src="auth.js"></script>
+        <script>requireLogin();</script>
+        <script src="shared.js"></script>
+        <script src="dashboard.js"></script>
+        <script src="member.js"></script>
+
+
+    </body>
+</html>

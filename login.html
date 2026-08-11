@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="eng">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>GenVer — Login</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    </head>
+    <body class="login-body">
+
+        <div class="login-shell">
+
+            <div class="login-intro">
+                <div class="login-intro-contents">
+                    <img src="logo/logo.png" alt="GenVer" class="login-intro-logo">
+                    <img src="logo/name.png" alt="GenVer" class="login-intro-name">
+                    <h1>Smart <span>fund tracking</span> for every team</h1>
+                    <p class="login-intro-tagline">Fund tracking for student orgs and teams — built for transparency, not spreadsheets.</p>
+
+                    <div class="login-feature-list">
+                        <div class="login-feature">
+                            <div class="login-i">
+                                <i class="fa-solid fa-diagram-project"></i>
+                            </div>
+                            
+                            <div>
+                                <h4>Track Multiple Projects</h4>
+                                <p>Run several fundraising projects at once, each with its own goal and progress.</p>
+                            </div>
+                        </div>
+                        <div class="login-feature">
+                            <div class="login-i">
+                                <i class="fa-solid fa-people-group"></i>
+                            </div>
+                            
+                            <div>
+                                <h4>Manage Members & Payments</h4>
+                                <p>See who's paid, who's partial, and who's still due — per project, at a glance.</p>
+                            </div>
+                        </div>
+                        <div class="login-feature">
+                            <div class="login-i">
+                                <i class="fa-solid fa-eye"></i>
+                            </div>
+                            
+                            <div>
+                                <h4>Public Transparency View</h4>
+                                <p>Members can check their own status anytime — no login, no asking the treasurer.</p>
+                            </div>
+                        </div>
+                        <div class="login-feature">
+                            <div class="login-i">
+                                <i class="fa-solid fa-clock-rotate-left"></i>
+                            </div>
+                            
+                            <div>
+                                <h4>Full Activity History</h4>
+                                <p>Every payment and change is logged automatically, so nothing gets lost.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="login-signup">
+
+                <div id="existing-account" class="login-card">
+                    <h2>Welcome Back</h2>
+                    <p class="login-subtitle">Enter your credentials to pick up where you left off.</p>
+
+                <form id="login-form">
+                    <label for="login-email">Email</label>
+                    <input type="email" id="login-email" placeholder="e.g email@gmail.com" required>
+
+                    <label for="login-password">Password</label>
+                    <input type="password" id="login-password" placeholder="Enter password" required>
+                    <button type="submit" class="btn-primary login-btn">Log In</button>
+                    <p id="login-error" class="login-error"></p>
+                </form>
+
+                    <p class="new-account">New to GenVer? <a href="#new-account" class="new-account-link">Create Account</a></p>
+                    <p class="or">or</p>
+                    <a href="public.html" class="back-link">Continue to Public View instead</a>
+                </div>
+
+                <div id="new-account" class="login-card">
+                    <h2>Get started with GenVer</h2>
+                    <p class="login-subtitle">Track every project, every payment, every peso — all in one place.</p>
+
+                    <form id="signup-form">
+                        <label for="user-name">Username</label>
+                        <input type="text" id="user-name" placeholder="e.g Juan" required>
+
+                        <label for="new-email">Email</label>
+                        <input type="email" id="new-email" placeholder="e.g email@gmail.com" required>
+
+                        <label for="enter-password">Password</label>
+                        <input type="password" id="enter-password" placeholder="Enter Password" required>
+
+                        <label for="confirm-password">Confirm password</label>
+                        <input type="password" id="confirm-password" placeholder="Confirm Password" required>
+
+                        <button type="submit" class="btn-primary login-btn">Create Account</button>
+                        <p id="signup-error" class="login-error"></p>
+                    </form>
+
+                    <p class="signup-warning"><i class="fa-solid fa-circle-info"></i> Creating an account replaces the current login credentials.</p>
+        
+                    <p class="existing-account">Already have an account? <a href="#existing-account" class="existing-account-link">Login</a></p>
+                    <p class="or">or</p>
+                    <a href="public.html" class="back-link">Continue to Public View instea</a>
+                </div>
+
+            </div>
+
+        </div>
+
+        <script src="shared.js"></script>
+        <script src="auth.js"></script>
+        <script src="login.js"></script>
+
+    </body>
+</html>

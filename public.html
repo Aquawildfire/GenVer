@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="eng">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>GenVer</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    </head>
+
+    <body>
+
+        <!---=========
+           NAV BAR
+          =========-->
+        <div class="side-bar">
+            <div class="nav-container">
+                <div class="logo">
+                    <img src="logo/logo.png" alt="GenVer_logo" class="logo-icon">
+                    <img src="logo/name.png" alt="GenVer_name" class="logo-name">
+                </div>
+                <a href="public.html" class="active" data-tooltip="Public View"><i class="fa-solid fa-eye"></i> <span class="nav-label"> Public View</span></a>
+                <div id="public-auth-link"></div>
+            </div>
+            <div class="sidebar-bottom-controls">
+                <button id="sidebar-toggle"><i class="fa-solid fa-bars-staggered"></i></button>
+            </div>
+        </div>
+        <div class="sidebar-backdrop" id="sidebar-backdrop"></div>
+
+        <!---============
+            MAIN CONTENT
+          ===============-->
+          
+        <div class="top-bar">
+            <div class="top-container">
+                <h3 class="active-nav">Public View</h3>
+                <div class="profile">
+                    <i class="fa-regular fa-bell"></i>
+                    <div class="profile-info">
+                        <img src="profile/pic.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="main-content">
+            <div class="page-title">All Projects</div>
+
+            <div class="project-contents">
+                <div class="search">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input type="text" id="public-project-search" placeholder="Search Project...">
+                </div>
+            </div>
+
+            <div class="page-title">Check My Status</div>
+                <div class="project-contents">
+                    <div class="search">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                        <input type="text" id="member-name-search" placeholder="Type your name...">
+                    </div>
+                </div>
+
+                <div id="member-status-result"></div>
+
+            <div id="public-project-list" class="project-cards"></div>
+
+        </div>
+
+        <script src="shared.js"></script>
+        <script src="auth.js"></script>
+        <script src="dashboard.js"></script>
+        <script src="public.js"></script>
+    </body>
+</html>

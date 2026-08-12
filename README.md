@@ -1,9 +1,12 @@
-# <h1 align="center">
-    <img src="logo/logo.png" alt="GenVer logo" width="32" valign="middle">
-    GenVer
-  </h1>
+<p align="center">
+  <img src="logo/logo.png" alt="GenVer logo" width="100">
+</p>
 
-> A fund-tracking web app for student orgs and teams — built with vanilla HTML, CSS, and JavaScript.
+<h1 align="center">GenVer</h1>
+
+<p align="center">A fund-tracking web app for student orgs and teams — built with vanilla HTML, CSS, and JavaScript.</p>
+
+---
 
 **Status:** Front-end complete. Backend/database integration planned next (currently uses `localStorage`, so data stays in one browser only).
 
